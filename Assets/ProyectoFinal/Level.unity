@@ -1199,7 +1199,7 @@ Transform:
   - {fileID: 730164244}
   - {fileID: 313538049}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &444648072
 GameObject:
@@ -3386,7 +3386,17 @@ PrefabInstance:
     - target: {fileID: 9135378564861183573, guid: 5c6d17a24d8c3634fae59fbe87c7bdff,
         type: 3}
       propertyPath: m_Name
-      value: RigidBodyFPSController
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135378564861183573, guid: 5c6d17a24d8c3634fae59fbe87c7bdff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135378564861183573, guid: 5c6d17a24d8c3634fae59fbe87c7bdff,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 9135378564861090417, guid: 5c6d17a24d8c3634fae59fbe87c7bdff,
         type: 3}
@@ -3426,7 +3436,7 @@ PrefabInstance:
     - target: {fileID: 9135378564861090417, guid: 5c6d17a24d8c3634fae59fbe87c7bdff,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9135378564861090417, guid: 5c6d17a24d8c3634fae59fbe87c7bdff,
         type: 3}
@@ -3534,7 +3544,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 95, y: -30, z: 0}
 --- !u!1 &1781964901
 GameObject:
