@@ -21,7 +21,7 @@ public class RocketScript : MonoBehaviour
             Rigidbody rb = hit.GetComponent<Rigidbody>();
 
             if (rb != null)
-                rb.AddExplosionForce(20, hit.transform.position, 10, 3.0F, ForceMode.Impulse);
+                rb.AddExplosionForce(20, collision.transform.position, 10, 3.0F, ForceMode.Impulse);
 
             hit.transform.gameObject.SendMessage("QuitarVida", 10);
 
