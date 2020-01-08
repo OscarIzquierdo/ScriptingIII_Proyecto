@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class UIAmmo : MonoBehaviour
 {
-    public TextMeshPro tmPro;
-    public TextMeshPro tmProHP;
+    public Text tmPro;
+    public Text tmProHP;
     public int indiceAmmo;
     public float hp;
     // Start is called before the first frame update
