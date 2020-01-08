@@ -37,4 +37,13 @@ public class Player : MonoBehaviour
         uiText.SetHPText(vidaActual);
     }
 
+    public void SetHidden(bool estado)
+    {
+        hidden = estado;
+    }
+
+    public void GetHidden()
+    {
+
+    }
 }
