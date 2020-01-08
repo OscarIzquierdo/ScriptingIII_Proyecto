@@ -42,8 +42,8 @@ public class Player : MonoBehaviour
         hidden = estado;
     }
 
-    public void GetHidden()
+    public bool GetHidden()
     {
-
+        return hidden;
     }
 }
