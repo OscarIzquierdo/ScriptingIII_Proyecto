@@ -1,4 +1,4 @@
-﻿    using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class VerySimplePistol : MonoBehaviour
@@ -7,12 +7,15 @@ public class VerySimplePistol : MonoBehaviour
 	public  float     m_damage        = 80.0f;				
 	public  float     m_forceToApply  = 20.0f;				
 	public  float     m_weaponRange   = 9999.0f;						
-	public  Texture2D m_crosshairTexture;											
-    private bool      m_canShot;
+	public  Texture2D m_crosshairTexture;
 
     public AudioClip m_fireSound;
     public AudioClip m_reloadSound;
     AudioSource audioSc;
+
+
+    private bool      m_canShot;
+
     public float             m_currentAccuracy;
     public float             m_currentAccuracyDropPerShot;
     public float             m_currentAccuracyRecoverPerSecond;
@@ -27,8 +30,6 @@ public class VerySimplePistol : MonoBehaviour
     int currentAmmo;
     UIAmmo textoUI;
 
-
-
     private void Start()
     {
         m_weapon = GameObject.FindGameObjectWithTag("Weapon");
@@ -42,19 +43,15 @@ public class VerySimplePistol : MonoBehaviour
         ammoClip = 11;
         currentAmmo = ammoClip;
         textoUI = FindObjectOfType<UIAmmo>();
-
-        audioSc = this.GetComponent<AudioSource>();
     }
 
     private void Update()
 	{
         m_weapon.transform.position = Vector3.Lerp(m_weapon.transform.position, transform.position, m_recoilRecovery * Time.deltaTime);
         m_currentAccuracy = Mathf.Lerp(m_currentAccuracy, m_currentAccuracy, m_currentAccuracyRecoverPerSecond * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKey(KeyCode.R))
         {
             Reload();
-            print("Recargo");
         }
 
         if (m_canShot)
@@ -68,7 +65,6 @@ public class VerySimplePistol : MonoBehaviour
         { 
 			m_canShot = true;
         }
-
         textoUI.SetText(currentAmmo);
 	}
 
@@ -113,14 +109,12 @@ public class VerySimplePistol : MonoBehaviour
 			}
 		}
 
-		audioSc.PlayOneShot(m_fireSound);
+		GetComponent<AudioSource>().PlayOneShot(m_fireSound);
 	}
-    
+
     private void Reload()
     {
         audioSc.PlayOneShot(m_reloadSound);
         currentAmmo = ammoClip;
     }
-
-
 }
