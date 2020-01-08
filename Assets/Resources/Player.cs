@@ -8,11 +8,16 @@ public class Player : MonoBehaviour
     public int vidaMaxima = 100;
     public int vidaActual;
     UIAmmo uiText;
+
+    public bool hidden;
+    
     // Use this for initialization
     void Start()
     {
         vidaActual = vidaMaxima;
         uiText = FindObjectOfType<UIAmmo>();
+        hidden = false;
+
     }
 
     public void QuitarVida(int daño)

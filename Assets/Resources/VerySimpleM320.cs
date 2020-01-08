@@ -9,8 +9,11 @@ public class VerySimpleM320 : MonoBehaviour
     public float m_forceToApply = 20.0f;
     public float m_weaponRange = 9999.0f;
     public Texture2D m_crosshairTexture;
-    public AudioClip m_fireSound;
     private bool m_canShot;
+
+    public AudioClip m_fireSound;
+    public AudioClip m_reloadSound;
+    AudioSource audioSc;
 
     public float m_currentAccuracy;
     public float m_currentAccuracyDropPerShot;
@@ -26,6 +29,7 @@ public class VerySimpleM320 : MonoBehaviour
     public GameObject shootSpot;
 
     public RocketScript m_rockCmp;
+
     private void Start()
     {
         m_weapon = GameObject.FindGameObjectWithTag("Weapon");
@@ -38,7 +42,7 @@ public class VerySimpleM320 : MonoBehaviour
         m_recoilRecovery = 4f;
         m_canShot = false;
 
-        
+        audioSc = this.GetComponent<AudioSource>();
 
     }
 

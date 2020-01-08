@@ -9,8 +9,13 @@ public class VerySimpleRPG : MonoBehaviour
     public float m_forceToApply = 20.0f;
     public float m_weaponRange = 9999.0f;
     public Texture2D m_crosshairTexture;
-    public AudioClip m_fireSound;
     private bool m_canShot;
+
+
+    public AudioClip m_fireSound;
+    public AudioClip m_reloadSound;
+    AudioSource audioSc;
+
 
     public float m_currentAccuracy;
     public float m_currentAccuracyDropPerShot;
@@ -37,9 +42,9 @@ public class VerySimpleRPG : MonoBehaviour
         m_recoilBack = 0.1f;
         m_recoilRecovery = 4f;
         m_canShot = false;
-        
 
-}
+        audioSc = this.GetComponent<AudioSource>();
+    }
 
     private void Update()
     {

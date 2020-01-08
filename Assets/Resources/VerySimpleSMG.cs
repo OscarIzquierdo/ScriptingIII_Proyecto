@@ -9,8 +9,13 @@ public class VerySimpleSMG : MonoBehaviour
     public float m_forceToApply = 20.0f;
     public float m_weaponRange = 9999.0f;
     public Texture2D m_crosshairTexture;
-    public AudioClip m_fireSound;
     private bool m_canShot;
+
+
+    public AudioClip m_fireSound;
+    public AudioClip m_reloadSound;
+    AudioSource audioSc;
+
 
     public float m_currentAccuracy;
     public float m_currentAccuracyDropPerShot;
@@ -39,6 +44,8 @@ public class VerySimpleSMG : MonoBehaviour
         ammoClip = 30;
         currentAmmo = ammoClip;
         textoUI = FindObjectOfType<UIAmmo>();
+
+        audioSc = this.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -47,7 +54,13 @@ public class VerySimpleSMG : MonoBehaviour
         m_weapon.transform.position = Vector3.Lerp(m_weapon.transform.position, transform.position, m_recoilRecovery * Time.deltaTime);
         m_currentAccuracy = Mathf.Lerp(m_currentAccuracy, m_currentAccuracy, m_currentAccuracyRecoverPerSecond * Time.deltaTime);
 
-            if (Input.GetButton("Fire1") && currentAmmo > 0)
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
+            print("Recargo");
+        }
+
+        if (Input.GetButton("Fire1") && currentAmmo > 0)
             {
                 m_roundsPerSec -= Time.deltaTime;
                 if(m_roundsPerSec <= 0)
@@ -102,5 +115,10 @@ public class VerySimpleSMG : MonoBehaviour
         }
 
         GetComponent<AudioSource>().PlayOneShot(m_fireSound);
+    }
+    private void Reload()
+    {
+        audioSc.PlayOneShot(m_reloadSound);
+        currentAmmo = ammoClip;
     }
 }
