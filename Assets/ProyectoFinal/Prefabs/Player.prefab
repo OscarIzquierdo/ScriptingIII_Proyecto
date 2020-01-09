@@ -4876,7 +4876,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 23
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -5127,6 +5127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 100
   vidaActual: 0
+  hidden: 0
 --- !u!114 &4145929216619522719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5140,12 +5141,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabPistol: {fileID: 4145929217511764671}
-  prefabShotGun: {fileID: 0}
+  prefabShotGun: {fileID: 4145929217511764671}
   prefabAK: {fileID: 4145929217824887448}
-  prefabRPG: {fileID: 0}
-  prefabM320: {fileID: 0}
+  prefabRPG: {fileID: 4145929217511764671}
+  prefabM320: {fileID: 4145929217511764671}
   weapons:
   - {fileID: 4145929217824887448}
+  - {fileID: 4145929217511764671}
+  - {fileID: 4145929217511764671}
+  - {fileID: 4145929217511764671}
   - {fileID: 4145929217511764671}
 --- !u!1 &4145929217511764671
 GameObject:
@@ -5199,6 +5203,7 @@ MonoBehaviour:
   m_weaponRange: 9999
   m_crosshairTexture: {fileID: 2800000, guid: 9a53a09e977118343a6f2c130ce0e85b, type: 3}
   m_fireSound: {fileID: 8300000, guid: f7a44c0f9871d7d4ab4cbc3856fb04f7, type: 3}
+  m_reloadSound: {fileID: 0}
   m_currentAccuracy: 0
   m_currentAccuracyDropPerShot: 0
   m_currentAccuracyRecoverPerSecond: 0
@@ -5215,7 +5220,8 @@ AudioSource:
   m_GameObject: {fileID: 4145929217511764671}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 5692a62c023b2364c92912e2f5ca9ad7,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -5354,6 +5360,7 @@ MonoBehaviour:
   m_weaponRange: 9999
   m_crosshairTexture: {fileID: 0}
   m_fireSound: {fileID: 8300000, guid: f7a44c0f9871d7d4ab4cbc3856fb04f7, type: 3}
+  m_reloadSound: {fileID: 0}
   m_currentAccuracy: 0
   m_currentAccuracyDropPerShot: 0
   m_currentAccuracyRecoverPerSecond: 0
@@ -5361,7 +5368,7 @@ MonoBehaviour:
   m_recoilBack: 0
   m_recoilRecovery: 0
   shootSpot: {fileID: 4145929218086139967}
-  ammoClip: 0
+  ammoClip: 32
 --- !u!82 &4145929217824887450
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5371,7 +5378,8 @@ AudioSource:
   m_GameObject: {fileID: 4145929217824887448}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 5692a62c023b2364c92912e2f5ca9ad7,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -10332,7 +10340,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 288
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -10351,6 +10359,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4145929217511764670}
     m_Modifications:
+    - target: {fileID: 100000, guid: e102eedcf6ecfa6428dc8f1e7e605c2b, type: 3}
+      propertyPath: m_Name
+      value: glock
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e102eedcf6ecfa6428dc8f1e7e605c2b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e102eedcf6ecfa6428dc8f1e7e605c2b, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: e102eedcf6ecfa6428dc8f1e7e605c2b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: e102eedcf6ecfa6428dc8f1e7e605c2b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100018, guid: e102eedcf6ecfa6428dc8f1e7e605c2b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e102eedcf6ecfa6428dc8f1e7e605c2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -10394,30 +10426,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: e102eedcf6ecfa6428dc8f1e7e605c2b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: e102eedcf6ecfa6428dc8f1e7e605c2b, type: 3}
-      propertyPath: m_Name
-      value: glock
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: e102eedcf6ecfa6428dc8f1e7e605c2b, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: e102eedcf6ecfa6428dc8f1e7e605c2b, type: 3}
-      propertyPath: m_TagString
-      value: Weapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 100014, guid: e102eedcf6ecfa6428dc8f1e7e605c2b, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 100016, guid: e102eedcf6ecfa6428dc8f1e7e605c2b, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 100018, guid: e102eedcf6ecfa6428dc8f1e7e605c2b, type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e102eedcf6ecfa6428dc8f1e7e605c2b, type: 3}
