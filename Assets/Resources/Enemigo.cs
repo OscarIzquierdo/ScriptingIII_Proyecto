@@ -8,17 +8,20 @@ public class Enemigo : MonoBehaviour
 
     public int vidaMaxima = 100;
     public int vidaActual;
-    int wayPointActual;
-    public List<GameObject> wayPoints;
+    Animator animatorCmp;
+    
+    //int wayPointActual;
+    //public List<GameObject> wayPoints;
     NavMeshAgent nmAgentCmp;
     // Use this for initialization
     void Start()
     {
+        animatorCmp = this.GetComponent<Animator>();
         vidaActual = vidaMaxima;
-        GetComponent<Renderer>().material.color = Color.white;
-        wayPointActual = 0;
+        //GetComponent<Renderer>().material.color = Color.white;
+        //wayPointActual = 0;
         nmAgentCmp = this.GetComponent<NavMeshAgent>();
-        nmAgentCmp.SetDestination(wayPoints[0].transform.position);
+        //nmAgentCmp.SetDestination(wayPoints[0].transform.position);
     }
 
     public void QuitarVida(int daño)
@@ -26,25 +29,28 @@ public class Enemigo : MonoBehaviour
         vidaActual -= daño;
 
         float porcentajeVida = (float)vidaActual / vidaMaxima;
-        Color color = new Color(1, porcentajeVida, porcentajeVida);
-        this.GetComponent<Renderer>().material.color = color;
+        //Color color = new Color(1, porcentajeVida, porcentajeVida);
+        //this.GetComponent<Renderer>().material.color = color;
 
         if (vidaActual <= 0)
         {
-            Destroy(this.gameObject);
+            nmAgentCmp.speed = 0;
+            animatorCmp.SetTrigger("Dead");
         }
 
         Debug.Log("Me han quitao");
     }
     private void Update()
     {
-        print(wayPoints.Count);
+
+        print(vidaActual);
+        /*
         if(nmAgentCmp.remainingDistance < 1 && !nmAgentCmp.pathPending)
         {
             NextWayPoint();
-        }
+        }*/
     }
-    void NextWayPoint()
+    /*void NextWayPoint()
     {
         if(wayPointActual < wayPoints.Count - 1)
         {
@@ -59,5 +65,5 @@ public class Enemigo : MonoBehaviour
             nmAgentCmp.SetDestination(wayPoints[wayPointActual].transform.position);
         }
             
-    }
+    }*/
 }

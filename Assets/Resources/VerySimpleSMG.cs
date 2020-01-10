@@ -50,14 +50,14 @@ public class VerySimpleSMG : MonoBehaviour
 
     private void Update()
     {
-        print("currentammo" + currentAmmo);
+        //print("currentammo" + currentAmmo);
         m_weapon.transform.position = Vector3.Lerp(m_weapon.transform.position, transform.position, m_recoilRecovery * Time.deltaTime);
         m_currentAccuracy = Mathf.Lerp(m_currentAccuracy, m_currentAccuracy, m_currentAccuracyRecoverPerSecond * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.R))
         {
             Reload();
-            print("Recargo");
+            //print("Recargo");
         }
 
         if (Input.GetButton("Fire1") && currentAmmo > 0)
