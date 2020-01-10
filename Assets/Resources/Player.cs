@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -25,10 +26,10 @@ public class Player : MonoBehaviour
         vidaActual -= daño;
 
         float porcentajeVida = (float)vidaActual / vidaMaxima;
-
+        print(porcentajeVida);
         if (vidaActual <= 0)
         {
-            Destroy(this.gameObject);
+            SceneManager.LoadScene(0);
         }
 
     }

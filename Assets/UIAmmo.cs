@@ -24,9 +24,9 @@ public class UIAmmo : MonoBehaviour
     }
     private void Update()
     {
-        print(indiceAmmo + " Ammo");
-        tmPro.text = indiceAmmo + " Ammo";
-        tmProHP.text = hp + "HP";
+        //print(indiceAmmo + " Ammo");
+        //tmPro.text = indiceAmmo + " Ammo";
+        //tmProHP.text = hp + "HP";
     }
 
 }

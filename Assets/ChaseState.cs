@@ -35,7 +35,6 @@ public class ChaseState : StateMachineBehaviour
         }
 
         m_agent.SetDestination(m_playerTransform.position);
-        Debug.Log(m_playerTransform.position);
     }
 
 }

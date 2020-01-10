@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerHidePlace : MonoBehaviour
+public class PunchScript : MonoBehaviour
 {
-
+    public int daño = 30;
     Player player;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -16,22 +15,15 @@ public class TriggerHidePlace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if( other.CompareTag("Player"))
+        if(other.CompareTag("Player"))
         {
-            player.SetHidden(true);
+            player.QuitarVida(daño);
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            player.SetHidden(false);
-        }
     }
 }
