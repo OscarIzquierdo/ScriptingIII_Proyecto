@@ -44,7 +44,7 @@ public class VerySimpleShotgun : MonoBehaviour
         m_recoilBack = 0.1f;
         m_recoilRecovery = 4f;
 
-
+        audioSc = this.GetComponent<AudioSource>();
         ammoClip = 8;
         currentAmmo = ammoClip;
         textoUI = FindObjectOfType<UIAmmo>();

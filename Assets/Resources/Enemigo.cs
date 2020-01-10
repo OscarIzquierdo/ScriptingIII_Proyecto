@@ -9,13 +9,14 @@ public class Enemigo : MonoBehaviour
     public int vidaMaxima = 100;
     public int vidaActual;
     Animator animatorCmp;
-    
+    Player player;
     //int wayPointActual;
     //public List<GameObject> wayPoints;
     NavMeshAgent nmAgentCmp;
     // Use this for initialization
     void Start()
     {
+        player = FindObjectOfType<Player>();
         animatorCmp = this.GetComponent<Animator>();
         vidaActual = vidaMaxima;
         //GetComponent<Renderer>().material.color = Color.white;
@@ -36,6 +37,7 @@ public class Enemigo : MonoBehaviour
         {
             nmAgentCmp.speed = 0;
             animatorCmp.SetTrigger("Dead");
+            Destroy(this.GetComponent<CapsuleCollider>());
         }
 
         Debug.Log("Me han quitao");
@@ -50,6 +52,11 @@ public class Enemigo : MonoBehaviour
             NextWayPoint();
         }*/
     }
+    public Player ReturnPlayer()
+    {
+        return player;
+    }
+
     /*void NextWayPoint()
     {
         if(wayPointActual < wayPoints.Count - 1)

@@ -24,6 +24,7 @@ public class TriggerHidePlace : MonoBehaviour
         if( other.CompareTag("Player"))
         {
             player.SetHidden(true);
+
         }
     }
 
@@ -32,6 +33,7 @@ public class TriggerHidePlace : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player.SetHidden(false);
+
         }
     }
 }

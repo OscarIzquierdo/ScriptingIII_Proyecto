@@ -9768,6 +9768,7 @@ MonoBehaviour:
   m_weaponRange: 9999
   m_crosshairTexture: {fileID: 0}
   m_fireSound: {fileID: 0}
+  m_reloadSound: {fileID: 0}
   m_currentAccuracy: 0
   m_currentAccuracyDropPerShot: 0
   m_currentAccuracyRecoverPerSecond: 0
@@ -9909,6 +9910,7 @@ MonoBehaviour:
   m_weaponRange: 9999
   m_crosshairTexture: {fileID: 0}
   m_fireSound: {fileID: 8300000, guid: f7a44c0f9871d7d4ab4cbc3856fb04f7, type: 3}
+  m_reloadSound: {fileID: 8300000, guid: 6a530c3113d5ea346a7d0f940428ffbe, type: 3}
   m_currentAccuracy: 0
   m_currentAccuracyDropPerShot: 0
   m_currentAccuracyRecoverPerSecond: 0
@@ -10065,6 +10067,7 @@ MonoBehaviour:
   m_weaponRange: 9999
   m_crosshairTexture: {fileID: 2800000, guid: 9a53a09e977118343a6f2c130ce0e85b, type: 3}
   m_fireSound: {fileID: 8300000, guid: f7a44c0f9871d7d4ab4cbc3856fb04f7, type: 3}
+  m_reloadSound: {fileID: 8300000, guid: 6a530c3113d5ea346a7d0f940428ffbe, type: 3}
   m_currentAccuracy: 0
   m_currentAccuracyDropPerShot: 0
   m_currentAccuracyRecoverPerSecond: 0
@@ -10220,6 +10223,7 @@ MonoBehaviour:
   m_weaponRange: 9999
   m_crosshairTexture: {fileID: 2800000, guid: 9a53a09e977118343a6f2c130ce0e85b, type: 3}
   m_fireSound: {fileID: 8300000, guid: f7a44c0f9871d7d4ab4cbc3856fb04f7, type: 3}
+  m_reloadSound: {fileID: 8300000, guid: 6a530c3113d5ea346a7d0f940428ffbe, type: 3}
   m_currentAccuracy: 0
   m_currentAccuracyDropPerShot: 0.38
   m_currentAccuracyRecoverPerSecond: 0.46
@@ -10473,6 +10477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 100
   vidaActual: 0
+  hidden: 0
 --- !u!114 &9135378565686697409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15622,6 +15627,7 @@ MonoBehaviour:
   m_weaponRange: 9999
   m_crosshairTexture: {fileID: 0}
   m_fireSound: {fileID: 0}
+  m_reloadSound: {fileID: 0}
   m_currentAccuracy: 0
   m_currentAccuracyDropPerShot: 0
   m_currentAccuracyRecoverPerSecond: 0

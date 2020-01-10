@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public int vidaMaxima = 100;
     public int vidaActual;
     UIAmmo uiText;
+    Animator enemyAnim;
 
     public bool hidden;
     
@@ -17,7 +18,6 @@ public class Player : MonoBehaviour
         vidaActual = vidaMaxima;
         uiText = FindObjectOfType<UIAmmo>();
         hidden = false;
-
     }
 
     public void QuitarVida(int daño)
