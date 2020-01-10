@@ -60,7 +60,7 @@ public class VerySimpleShotgun : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             Reload();
-            print("Recargo");
+            //print("Recargo");
         }
 
         if (m_canShot)
