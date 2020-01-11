@@ -15,7 +15,7 @@ public class ChangeWeaponsScript : MonoBehaviour
     { 
         weapons[0] = prefabAK;
         weapons[1] = prefabPistol;
-        weapons[2] = prefabShotGun;
+
         for (int i = 0; i < weapons.Count; i++)
         {
             
@@ -43,12 +43,8 @@ public class ChangeWeaponsScript : MonoBehaviour
         {
             CheckWeapon(1);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            CheckWeapon(2);
-        }
 
-        if (Input.GetAxis("Mouse ScrollWheel") > 0 && currentWeapon < 3)
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && currentWeapon < 1)
         {
             CheckWeapon(currentWeapon + 1);
         }
