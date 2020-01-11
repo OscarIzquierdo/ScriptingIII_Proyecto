@@ -8,18 +8,14 @@ public class ChangeWeaponsScript : MonoBehaviour
     public GameObject prefabPistol;
     public GameObject prefabShotGun;
     public GameObject prefabAK;
-    public GameObject prefabRPG;
-    public GameObject prefabM320;
     int currentWeapon;
     public List<GameObject> weapons;
     // Start is called before the first frame update
     void Start()
     { 
-        weapons[4] = prefabAK;
-        weapons[3] = prefabPistol;
+        weapons[0] = prefabAK;
+        weapons[1] = prefabPistol;
         weapons[2] = prefabShotGun;
-        weapons[1] = prefabRPG; 
-        weapons[0] = prefabM320;
         for (int i = 0; i < weapons.Count; i++)
         {
             
@@ -51,16 +47,8 @@ public class ChangeWeaponsScript : MonoBehaviour
         {
             CheckWeapon(2);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            CheckWeapon(3);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            CheckWeapon(4);
-        }
 
-        if (Input.GetAxis("Mouse ScrollWheel") > 0 && currentWeapon < 4)
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && currentWeapon < 3)
         {
             CheckWeapon(currentWeapon + 1);
         }

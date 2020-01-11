@@ -7,13 +7,13 @@ public class EnemyStateMachineusingBehaviours : MonoBehaviour
     Animator m_animator;
     Player m_player;
     public bool playerHidden;
-    CapsuleCollider coll;
+    BoxCollider coll;
     // Start is called before the first frame update
     void Start()
     {
         m_animator = GetComponent<Animator>();
         m_player = GetComponent<Player>();
-        coll = this.GetComponentInChildren<CapsuleCollider>();
+        coll = this.GetComponentInChildren<BoxCollider>();
         coll.enabled = false;
     }
 
@@ -32,10 +32,12 @@ public class EnemyStateMachineusingBehaviours : MonoBehaviour
     public void ActivateCollider()
     {
         coll.enabled = true;
+        Debug.Log("Collider" + coll.enabled);
     }
     public void DesactivateCollider()
     {
         coll.enabled = false;
+        Debug.Log("Collider" + coll.enabled);
     }
 }
 
