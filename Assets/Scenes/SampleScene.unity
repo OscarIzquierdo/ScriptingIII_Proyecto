@@ -3869,6 +3869,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 582634847172036581, guid: adce218f08cdd724683c88dd129a2b66,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 582634847172036569, guid: adce218f08cdd724683c88dd129a2b66,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4131,11 +4136,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9135378565686697409, guid: 5c6d17a24d8c3634fae59fbe87c7bdff,
-        type: 3}
-      propertyPath: weapons.Array.size
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c6d17a24d8c3634fae59fbe87c7bdff, type: 3}

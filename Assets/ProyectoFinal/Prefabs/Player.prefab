@@ -5143,13 +5143,8 @@ MonoBehaviour:
   prefabPistol: {fileID: 4145929217511764671}
   prefabShotGun: {fileID: 4145929217511764671}
   prefabAK: {fileID: 4145929217824887448}
-  prefabRPG: {fileID: 4145929217511764671}
-  prefabM320: {fileID: 4145929217511764671}
   weapons:
   - {fileID: 4145929217824887448}
-  - {fileID: 4145929217511764671}
-  - {fileID: 4145929217511764671}
-  - {fileID: 4145929217511764671}
   - {fileID: 4145929217511764671}
 --- !u!1 &4145929217511764671
 GameObject:
@@ -10442,14 +10437,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4145929217824887451}
     m_Modifications:
-    - target: {fileID: 100000, guid: cc9754e10c7832e49b415a9bb12e73a2, type: 3}
-      propertyPath: m_Name
-      value: ak47
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: cc9754e10c7832e49b415a9bb12e73a2, type: 3}
-      propertyPath: m_TagString
-      value: Weapon
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cc9754e10c7832e49b415a9bb12e73a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.88829e-17
@@ -10493,6 +10480,14 @@ PrefabInstance:
     - target: {fileID: 400000, guid: cc9754e10c7832e49b415a9bb12e73a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cc9754e10c7832e49b415a9bb12e73a2, type: 3}
+      propertyPath: m_Name
+      value: ak47
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cc9754e10c7832e49b415a9bb12e73a2, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc9754e10c7832e49b415a9bb12e73a2, type: 3}
