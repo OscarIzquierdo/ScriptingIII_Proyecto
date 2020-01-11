@@ -76,7 +76,7 @@ public class ChangeWeaponsScript : MonoBehaviour
 
         for (int i = 0; i < weapons.Count; i++)
         {
-            print(weapons[i]);
+            //print(weapons[i]);
             if (i == indice)
             {
                 weapons[i].SetActive(true);

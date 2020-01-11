@@ -40,6 +40,8 @@ public class VerySimplePistol : MonoBehaviour
         m_recoilBack = 0.1f;
         m_recoilRecovery = 4f;
 
+        audioSc = this.GetComponent<AudioSource>();
+
         ammoClip = 11;
         currentAmmo = ammoClip;
         textoUI = FindObjectOfType<UIAmmo>();
@@ -49,7 +51,7 @@ public class VerySimplePistol : MonoBehaviour
 	{
         m_weapon.transform.position = Vector3.Lerp(m_weapon.transform.position, transform.position, m_recoilRecovery * Time.deltaTime);
         m_currentAccuracy = Mathf.Lerp(m_currentAccuracy, m_currentAccuracy, m_currentAccuracyRecoverPerSecond * Time.deltaTime);
-        if(Input.GetKey(KeyCode.R))
+        if(Input.GetKeyDown(KeyCode.R))
         {
             Reload();
         }

@@ -31,6 +31,7 @@ public class PatrolState : StateMachineBehaviour
         m_agent.isStopped = false;
         m_agent.SetDestination(randomWaypoint.position);
 
+        Debug.Log(m_waypointsVector);
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -43,7 +44,7 @@ public class PatrolState : StateMachineBehaviour
             animator.SetTrigger("Chase");
         }
 
-        if(m_agent.pathPending && m_agent.remainingDistance <1)
+        if(!m_agent.pathPending && m_agent.remainingDistance < 1)
         {
             animator.SetTrigger("Idle");
         }

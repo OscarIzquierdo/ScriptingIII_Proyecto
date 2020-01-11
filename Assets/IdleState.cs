@@ -24,7 +24,7 @@ public class IdleState : StateMachineBehaviour
         float hearingDistance = Vector3.Distance(animator.transform.position, m_playerTransf.position);
         playerHidden = m_player.GetHidden();
 
-        if(hearingDistance < 10 && playerHidden != true)
+        if(hearingDistance < 7 && playerHidden != true)
         {
             animator.SetTrigger("Chase");
         }
