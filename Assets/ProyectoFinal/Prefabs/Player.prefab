@@ -5198,7 +5198,7 @@ MonoBehaviour:
   m_weaponRange: 9999
   m_crosshairTexture: {fileID: 2800000, guid: 9a53a09e977118343a6f2c130ce0e85b, type: 3}
   m_fireSound: {fileID: 8300000, guid: f7a44c0f9871d7d4ab4cbc3856fb04f7, type: 3}
-  m_reloadSound: {fileID: 0}
+  m_reloadSound: {fileID: 8300000, guid: 6a530c3113d5ea346a7d0f940428ffbe, type: 3}
   m_currentAccuracy: 0
   m_currentAccuracyDropPerShot: 0
   m_currentAccuracyRecoverPerSecond: 0
@@ -5353,9 +5353,9 @@ MonoBehaviour:
   m_damage: 80
   m_forceToApply: 20
   m_weaponRange: 9999
-  m_crosshairTexture: {fileID: 0}
+  m_crosshairTexture: {fileID: 2800000, guid: 9a53a09e977118343a6f2c130ce0e85b, type: 3}
   m_fireSound: {fileID: 8300000, guid: f7a44c0f9871d7d4ab4cbc3856fb04f7, type: 3}
-  m_reloadSound: {fileID: 0}
+  m_reloadSound: {fileID: 8300000, guid: 6a530c3113d5ea346a7d0f940428ffbe, type: 3}
   m_currentAccuracy: 0
   m_currentAccuracyDropPerShot: 0
   m_currentAccuracyRecoverPerSecond: 0
@@ -10437,6 +10437,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4145929217824887451}
     m_Modifications:
+    - target: {fileID: 100000, guid: cc9754e10c7832e49b415a9bb12e73a2, type: 3}
+      propertyPath: m_Name
+      value: ak47
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cc9754e10c7832e49b415a9bb12e73a2, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cc9754e10c7832e49b415a9bb12e73a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.88829e-17
@@ -10480,14 +10488,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: cc9754e10c7832e49b415a9bb12e73a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: cc9754e10c7832e49b415a9bb12e73a2, type: 3}
-      propertyPath: m_Name
-      value: ak47
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: cc9754e10c7832e49b415a9bb12e73a2, type: 3}
-      propertyPath: m_TagString
-      value: Weapon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc9754e10c7832e49b415a9bb12e73a2, type: 3}
