@@ -4992,6 +4992,7 @@ GameObject:
   - component: {fileID: 4145929217266451689}
   - component: {fileID: 4145929216619522715}
   - component: {fileID: 4145929216619522719}
+  - component: {fileID: 2081902654}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5146,6 +5147,18 @@ MonoBehaviour:
   weapons:
   - {fileID: 4145929217824887448}
   - {fileID: 4145929217511764671}
+--- !u!114 &2081902654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4145929217277227275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb05eeb7b4fb41049bd42d1b71638115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4145929217511764671
 GameObject:
   m_ObjectHideFlags: 0
@@ -5193,19 +5206,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_raycastSpot: {fileID: 4145929216543857436}
-  m_damage: 80
-  m_forceToApply: 20
-  m_weaponRange: 9999
   m_crosshairTexture: {fileID: 2800000, guid: 9a53a09e977118343a6f2c130ce0e85b, type: 3}
-  m_fireSound: {fileID: 8300000, guid: f7a44c0f9871d7d4ab4cbc3856fb04f7, type: 3}
-  m_reloadSound: {fileID: 8300000, guid: 6a530c3113d5ea346a7d0f940428ffbe, type: 3}
   m_currentAccuracy: 0
   m_currentAccuracyDropPerShot: 0
   m_currentAccuracyRecoverPerSecond: 0
   m_recoilBack: 0.1
   m_recoilRecovery: 0
-  shootSpot: {fileID: 4145929216543857437}
-  ammoClip: 11
+  m_shootSpot: {fileID: 4145929216543857437}
+  data: {fileID: 11400000, guid: a850935ec9ca5674b97380cf53b0e8de, type: 2}
 --- !u!82 &4145929217511764657
 AudioSource:
   m_ObjectHideFlags: 0

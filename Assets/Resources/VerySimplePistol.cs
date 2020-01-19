@@ -23,7 +23,7 @@ public class VerySimplePistol : MonoBehaviour
     GameObject          m_weapon;
     public GameObject   m_shootSpot;
    
-    int currentAmmo;
+    public int currentAmmo;
     UIAmmo textoUI;
 
     public SimpleWeaponInfo data;
