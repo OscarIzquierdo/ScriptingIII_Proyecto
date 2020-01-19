@@ -29,7 +29,7 @@ public class VerySimpleSMG : MonoBehaviour
     public GameObject shootSpot;
 
     public int ammoClip = 30;
-    int currentAmmo;
+    public int currentAmmo;
     UIAmmo textoUI;
 
     private void Start()
