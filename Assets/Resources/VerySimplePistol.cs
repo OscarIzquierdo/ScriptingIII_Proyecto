@@ -2,48 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 public class VerySimplePistol : MonoBehaviour
-{
-	public  Transform m_raycastSpot;					
-	public  float     m_damage        = 80.0f;				
-	public  float     m_forceToApply  = 20.0f;				
-	public  float     m_weaponRange   = 9999.0f;						
-	public  Texture2D m_crosshairTexture;
-
-    public AudioClip m_fireSound;
-    public AudioClip m_reloadSound;
-    AudioSource audioSc;
+{	
 
 
-    private bool      m_canShot;
+    public Transform    m_raycastSpot;
+    public  Texture2D   m_crosshairTexture;
 
-    public float             m_currentAccuracy;
-    public float             m_currentAccuracyDropPerShot;
-    public float             m_currentAccuracyRecoverPerSecond;
+    private AudioSource m_audioSc;
 
-    public float             m_recoilBack;
-    public float             m_recoilRecovery;
 
-    GameObject        m_weapon;
-    public GameObject shootSpot;
+    private bool        m_canShot;
 
-    public int ammoClip = 11;
+    public float        m_currentAccuracy;
+    public float        m_currentAccuracyDropPerShot;
+    public float        m_currentAccuracyRecoverPerSecond;
+
+    public float        m_recoilBack;
+    public float        m_recoilRecovery;
+
+    GameObject          m_weapon;
+    public GameObject   m_shootSpot;
+   
     int currentAmmo;
     UIAmmo textoUI;
+
+    public SimpleWeaponInfo data;
 
     private void Start()
     {
         m_weapon = GameObject.FindGameObjectWithTag("Weapon");
-        m_currentAccuracy = 0;
-        m_currentAccuracyDropPerShot = 0.1F;
-        m_currentAccuracyRecoverPerSecond = 0.1F;
+        data.Accuracy = 0;
+        data.AccuracyDropPerShot = 0.1F;
+        data.AccuracyRecoverPerSecond = 0.1F;
 
         m_recoilBack = 0.1f;
         m_recoilRecovery = 4f;
 
-        audioSc = this.GetComponent<AudioSource>();
+        m_audioSc = this.GetComponent<AudioSource>();
 
-        ammoClip = 11;
-        currentAmmo = ammoClip;
+        data.AmmoCapacity = 11;
+        currentAmmo = data.AmmoCapacity;
         textoUI = FindObjectOfType<UIAmmo>();
     }
 
@@ -83,7 +81,7 @@ public class VerySimplePistol : MonoBehaviour
         m_canShot = false;
         currentAmmo = currentAmmo - 1;
 
-        shootSpot.GetComponent<ParticleSystem>().Play();
+        m_shootSpot.GetComponent<ParticleSystem>().Play();
 
         float accuracyModifier = (100 - m_currentAccuracy) / 1000;
         Vector3 directionForward = m_raycastSpot.forward;
@@ -100,23 +98,23 @@ public class VerySimplePistol : MonoBehaviour
 
         RaycastHit hit;
 
-		if (Physics.Raycast(ray, out hit, m_weaponRange))
+		if (Physics.Raycast(ray, out hit, data.WeaponRange))
 		{
             //Debug.Log("Hit " + hit.transform.name);
             hit.collider.SendMessage("QuitarVida", 10);
             if (hit.rigidbody)
 			{
-				hit.rigidbody.AddForce(ray.direction * m_forceToApply);
+				hit.rigidbody.AddForce(ray.direction * data.ForceToApply);
                 //Debug.Log("Hit");
 			}
 		}
 
-		GetComponent<AudioSource>().PlayOneShot(m_fireSound);
+		GetComponent<AudioSource>().PlayOneShot(data.FireSound);
 	}
 
     private void Reload()
     {
-        audioSc.PlayOneShot(m_reloadSound);
-        currentAmmo = ammoClip;
+        m_audioSc.PlayOneShot(data.ReloadSound);
+        currentAmmo = data.AmmoCapacity;
     }
 }
