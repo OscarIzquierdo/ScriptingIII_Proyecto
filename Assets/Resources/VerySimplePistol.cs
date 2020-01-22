@@ -25,8 +25,8 @@ public class VerySimplePistol : MonoBehaviour
    
     public int currentAmmo;
     UIAmmo textoUI;
-
-    public SimpleWeaponInfo data;
+    
+    [SerializeField]WeaponItem data;
 
     private void Start()
     {
